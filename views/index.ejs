@@ -1,0 +1,26 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do-App</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body> -->
+  <%- include("header") -%>
+    <div class="box" id="heading">
+      <h1><%= listTitle %></h1>
+    </div>
+    <div class="box">
+        <% var i %>
+        <% for(i=0;i<list.length;i++){ %>
+        <div class="item">
+           <input type="checkbox" name="chk">
+           <p><%= list[i] %></p>
+        </div>
+        <% } %>
+    </div>
+    <form action="/" method="post" class="box">
+      <input type="text" name="newVal" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="button" value=<%= listTitle %>>+</button>
+    </form>
+  <%- include("footer") -%>
